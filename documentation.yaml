@@ -12,7 +12,7 @@ externalDocs:
   url: https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice
   description: FreeCodeCamp
 servers:
-  - url: https://timestamp.profresor.net
+  - url: https://headerparser.profresor.net
 paths:
   /api/whoami:
     get:
