@@ -7,4 +7,4 @@ services:
     environment:
       - NODE_ENV="production"
     volumes:
-      - ../../logs/freecodecamp-timestamp:/logs
+      - ../../logs/freecodecamp-headerparser:/logs
