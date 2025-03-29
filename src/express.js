@@ -1,41 +1,64 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+import cors from 'cors';
+import express from 'express';
+import path from 'path';
 
-const mainView = require('./index');
-const hello = require('./api/hello/index');
-const whoami = require('./api/whoami/index');
-const docs = require('./api/docs/index');
+import { docs } from "./api/docs/index.js";
+import { hello } from "./api/hello/index.js";
+import { logger } from "./logger.js";
+import { mainView } from "./index.js";
+import { whoami } from "./api/whoami/index.js";
 
 const app = express();
+const router = express.Router();
+const __dirname = import.meta.dirname;
 
 //Middleware declaration
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
-app.use(cors({ optionsSuccessStatus: 200 }));  // some legacy browsers choke on 204
+router.use(cors({ optionsSuccessStatus: 200 }));  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static(path.join(__dirname, '..', 'public')));
+router.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use((req, _, next) => {
-    console.log(`${req.method} ${req.path} - ${req.ip}`);
+router.use((req, _, next) => {
+
+    let hasRouteToHandle = null;
+    router.stack.forEach((stackItem) => {
+        // check if current rout path matches route request path
+        if (stackItem.handle?.stack !== undefined) {
+            stackItem?.handle.stack.forEach((innerItem) => {
+                if (innerItem.regexp.test(req.path)) {
+                    hasRouteToHandle = true;
+                }
+            });
+        }
+    });
+
+    let msg = `${req.method} ${req.path} - ${req.ip}`
+
+    if (hasRouteToHandle) {
+        logger.info(msg);
+    } else {
+        // No matching route for this request
+        logger.error(msg);
+    }
+
     next();
 });
 
 //Routes declaration
 
 // /
-app.use(mainView);
-
+router.use(mainView);
 // /api/hello 
-app.use(hello);
-
+router.use(hello);
 // /api/docs
-app.use(docs);
-
+router.use(docs);
 // /api/whoami
-app.use(whoami);
+router.use(whoami);
+
+app.use(router);
 
 
-module.exports = app;
+export { app };

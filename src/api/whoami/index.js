@@ -1,6 +1,8 @@
-const router = require('express').Router();
+import express from 'express';
 
-router.get('/api/:date', (req, res) => {
+const whoami = express.Router();
+
+whoami.get('/api/:date', (req, res) => {
     /* 'x-forwarded-for' key is used since my solution uses reverse proxy to run on my machine, 
         if such solution is not used by you, change it to 'host' instead 
     */
@@ -11,4 +13,4 @@ router.get('/api/:date', (req, res) => {
     });
 });
 
-module.exports = router;
+export { whoami };
