@@ -4,7 +4,7 @@ import express from 'express';
 const mainView = express.Router();
 const __dirname = import.meta.dirname;
 
-router.get('/', (_, res) => {
+mainView.get('/', (_, res) => {
     res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 });
 
