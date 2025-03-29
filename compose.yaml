@@ -4,3 +4,7 @@ services:
     build: .
     ports:
       - "10001:3000"
+    environment:
+      - NODE_ENV="production"
+    volumes:
+      - ../../logs/freecodecamp-timestamp:/logs
