@@ -1,4 +1,4 @@
-# Timestamp Microservice
+# Header Parser Microservice
 
 My solution for one of the tasks from [freecodecamp](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice). This task involved creation of simple timestamp microservice according to the given guidelines that can be found in the above link. The solution is currently available on [my website](https://headerparser.profresor.net)
 
