@@ -2,11 +2,11 @@ import cors from 'cors';
 import express from 'express';
 import path from 'path';
 
-import { docs } from "./api/docs/index.js";
-import { hello } from "./api/hello/index.js";
-import { logger } from "./logger.js";
-import { mainView } from "./index.js";
-import { whoami } from "./api/whoami/index.js";
+import { docs } from "./api/docs/index.mjs";
+import { hello } from "./api/hello/index.mjs";
+import { logger } from "./logger.mjs";
+import { mainView } from "./index.mjs";
+import { whoami } from "./api/whoami/index.mjs";
 
 const app = express();
 const router = express.Router();
