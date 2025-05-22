@@ -42,7 +42,7 @@ describe('/api/whoami', () => {
         });
     });
 
-    it("Shoud return empty headers error as ip", async () => {
+    it("Shoud return empty headers error as IP", async () => {
         const res = await request(app).get('/api/whoami').set(
             "accept-language", "en-US,en;q=0.9").set(
             "user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3");
