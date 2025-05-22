@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "vitest --silent"
+    "test": "vitest --reporter=verbose"
   },
   "dependencies": {
     "cors": "^2.8.1",
