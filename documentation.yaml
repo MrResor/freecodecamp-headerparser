@@ -4,15 +4,20 @@ info:
   description: Solution of a freecodecamp task for creating a header parser.
   contact:
     email: jakusienko@gmail.com
+
   license:
     name: MIT
     url: https://en.wikipedia.org/wiki/MIT_License
+
   version: 1.1.0
+
 externalDocs:
   url: https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice
   description: FreeCodeCamp
+
 servers:
   - url: https://headerparser.profresor.net
+
 paths:
   /api/whoami:
     get:
@@ -27,6 +32,19 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Info"
+              examples:
+                with headers:
+                  summary: Example with headers
+                  value:
+                    ipaddress: "123.234.111.222"
+                    language: "en-US,en;q=0.5"
+                    software: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+                without headers:
+                  summary: Example without headers
+                  value:
+                    ipaddress: "Header missing"
+                    language: "Header missing"
+                    software: "Header missing"
 
   /api/hello:
     get:
@@ -57,9 +75,4 @@ components:
         language:
           type: string
         software:
-          type: string
-      example: 
-        ipaddress: "::ffff:159.20.14.100"
-        language: "en-US,en;q=0.5"
-        software: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
-        
+          type: string  
