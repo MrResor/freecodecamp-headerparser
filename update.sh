@@ -5,10 +5,12 @@ git pull
 
 sudo docker compose up -d
 
-response = $(curl --silent https://headerparser.freecodecamp.org/api/hello)
+sleep 2
 
-if [ "$response" == "{greeting":"hello API!}" ]; then
-    echo "API is working!"
+response=$(curl --silent https://headerparser.profresor.net/api/hello)
+
+if [ "$response" == '{"greeting":"hello API"}' ]; then
+    echo "SUCCESS: API is working!"
 else
     echo "ERROR: API is not working!"
 fi
