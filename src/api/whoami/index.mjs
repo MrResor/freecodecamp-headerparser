@@ -2,7 +2,7 @@ import express from 'express';
 
 const whoami = express.Router();
 
-whoami.get('/api/:date', (req, res) => {
+whoami.get('/api/whoami', (req, res) => {
     /* 'x-forwarded-for' key is used since my solution uses reverse proxy to run on my machine, 
         if such solution is not used by you, change it to 'host' instead 
     */
