@@ -1,5 +1,5 @@
 sudo docker compose down
-sudo docker image rm freecodecamp-headerparser-api
+sudo docker rmi freecodecamp-headerparser-api
 
 git pull
 
