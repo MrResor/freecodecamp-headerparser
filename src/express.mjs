@@ -3,9 +3,9 @@ import express from 'express'
 
 import { docs } from './api/docs/index.mjs'
 import { hello } from './api/hello/index.mjs'
-import { logger } from './logger.mjs'
-import { mainView } from './index.mjs'
 import { whoami } from './api/whoami/index.mjs'
+import { mainView } from './index.mjs'
+import { logger } from './logger.mjs'
 
 const app = express()
 const router = express.Router()
