@@ -30,7 +30,7 @@ describe('/', () => {
     expect(res.text).toContain('Cannot GET /api/non-existing-route')
   })
 })
-  
+
 describe('/style.css', () => {
   it('should return style.css', async () => {
     const res = await request(app).get('/style.css')
