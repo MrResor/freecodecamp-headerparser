@@ -4,7 +4,6 @@ import express from 'express'
 import swaggerUi from 'swagger-ui-express'
 import YAML from 'yaml'
 
-
 const file = fs.readFileSync('documentation.yaml', 'utf8')
 const swaggerDocument = YAML.parse(file)
 
