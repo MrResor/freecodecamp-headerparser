@@ -26,4 +26,4 @@ The documentation of the application endpoints can be found under [<i>/api/docs<
 
 ## NOTES
 
-Due to usage of reverse proxy on my server, 'x-forwarded-for' header is used to determine the IP of the requester, instead of 'host' header. If you plan on using this program on your local machine or on machine where reverse proxy is not necessary please modify [this file](https://github.com/MrResor/freecodecamp-headerparser/blob/main/src/api/whoami/index.js)
+Due to usage of reverse proxy on my server, 'x-forwarded-for' header is used to determine the IP of the requester, instead of 'host' header. If you plan on using this program on your local machine or on machine where reverse proxy is not necessary please modify [this file](https://github.com/MrResor/freecodecamp-headerparser/blob/main/src/api/whoami/index.mjs)
